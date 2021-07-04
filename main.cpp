@@ -2,6 +2,7 @@
 #include "Atelier.h"
 #include "Client.h"
 #include "Reparatie.h"
+#include "Masina.h"
 #include <memory>
 
 int main() {
@@ -25,8 +26,8 @@ int main() {
         atelier.adaugaAngajat(mecanic2);
 
 
-        Reparatie reparatie( std::make_shared<Masina>(masina), std::make_shared<Mecanic>(mecanic), std::make_shared<Atelier>(atelier), 1700, {"baie ulei", "bloc motor"}, false);
-        Reparatie reparatie2( std::make_shared<Masina>(masina), std::make_shared<Mecanic>(mecanic2), std::make_shared<Atelier>(atelier), 2000, {"pompe servodirectie"}, false);
+        Reparatie<Masina> reparatie( std::make_shared<Masina>(masina), std::make_shared<Mecanic>(mecanic), std::make_shared<Atelier>(atelier), 1700, {"baie ulei", "bloc motor"}, false);
+        Reparatie<Masina> reparatie2( std::make_shared<Masina>(masina), std::make_shared<Mecanic>(mecanic2), std::make_shared<Atelier>(atelier), 2000, {"pompe servodirectie"}, false);
 
         std::cout << atelier << '\n';
         std::cout << client << '\n';
