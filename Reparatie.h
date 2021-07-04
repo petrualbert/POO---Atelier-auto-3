@@ -53,8 +53,8 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const Reparatie<T> &reparatie)
     {
-        os << "Reparatie " << "realizata de mecanicul " << reparatie.m_mecanic->getMNume() << " pentru masina "
-           << reparatie.m_masina << " " <<
+        os << "Reparatie " << "realizata de mecanicul " << reparatie.m_mecanic->getMNume() << " pentru "
+           << *reparatie.m_masina << " " <<
            "cu posesorul " << reparatie.m_masina->getMPosesor()->getMNume() << " costa " << reparatie.m_pret_total << " pentru " <<
            reparatie.m_componente.size() << " componente";
         return os;

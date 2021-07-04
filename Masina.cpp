@@ -2,9 +2,10 @@
 
 
 std::ostream &operator<<(std::ostream &os, const Masina &masina) {
-    os << "Masina are posesorul cu numele " << masina.m_posesor->getMNume() <<
-        "si este un " << masina.marca << " " << masina.model << " fabricat in anul " <<
-        masina.an_fabricatie << " efectuand " << masina.kilometraj << " km in total";
+//    os << "Masina are posesorul cu numele " << masina.m_posesor->getMNume() <<
+//        "si este un " << masina.marca << " " << masina.model << " fabricat in anul " <<
+//        masina.an_fabricatie << " efectuand " << masina.kilometraj << " km in total";
+    os << "Masina" << masina.getMarca()  << " " << masina.getModel();
     return os;
 }
 

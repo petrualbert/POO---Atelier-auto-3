@@ -24,6 +24,8 @@ public:
 
     const std::string &getMarca() const;
 
+
+
     void setMarca(const std::string &marca);
 
     const std::string &getModel() const;

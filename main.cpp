@@ -4,6 +4,7 @@
 #include "Reparatie.h"
 #include "Masina.h"
 #include <memory>
+#include "ComponentaFactory.h"
 
 int main() {
 
@@ -26,8 +27,14 @@ int main() {
         atelier.adaugaAngajat(mecanic2);
 
 
-        Reparatie<Masina> reparatie( std::make_shared<Masina>(masina), std::make_shared<Mecanic>(mecanic), std::make_shared<Atelier>(atelier), 1700, {"baie ulei", "bloc motor"}, false);
-        Reparatie<Masina> reparatie2( std::make_shared<Masina>(masina), std::make_shared<Mecanic>(mecanic2), std::make_shared<Atelier>(atelier), 2000, {"pompe servodirectie"}, false);
+
+
+        ComponentaAuto componenta1 = ComponentaFactory::Anvelopa();
+        ComponentaAuto componenta2 = ComponentaFactory::DiscFrana();
+        ComponentaAuto componenta3 = ComponentaFactory::FiltruUlei();
+
+        Reparatie<Masina> reparatie( std::make_shared<Masina>(masina), std::make_shared<Mecanic>(mecanic), std::make_shared<Atelier>(atelier), 1700, {componenta1.getMaterial()}, false);
+        Reparatie<Masina> reparatie2( std::make_shared<Masina>(masina), std::make_shared<Mecanic>(mecanic2), std::make_shared<Atelier>(atelier), 2000, {componenta2.getMaterial()}, false);
 
         std::cout << atelier << '\n';
         std::cout << client << '\n';
